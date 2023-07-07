@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+</head>
+  
+<body>
+    <style type="text/css">
+        .table tr.fit,
+        .table td.fit,
+        .table th.fit {
+            white-space: nowrap;
+            width: 1%;
+        }
+    </style>
+
+    <h1>Polygon Market!</h1>
+    <div class="container text-center">
+        <!-- TSLA -->
+        <h2>TSLA</h2>
+        <br>
+        <div class="row">
+          <div class="col" style="height:250px;overflow-y: scroll;">
+            <p>Trades</p>
+              <table class="table table-responsive table-striped table-sm" id="trades0">
+                  <thead>
+                      <tr>
+                          <th scope="col">Time</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Trades</th>
+                          <th scope="col">Orders</th>
+          
+                      </tr>
+                  </thead>
+                  <tbody id="trades_tbody0">
+
+                  </tbody>
+              </table>
+          </div>
+          <div class="col" style="height:250px;overflow-y: scroll;">
+            <p>Quotes</p>
+              <table class="table table-responsive table-striped table-sm" id ="quotes0">
+                  <thead>
+                      <tr>
+                          <th scope="col">Time</th>
+                          <th scope="col">Bid Price</th>
+                          <th scope="col">Bid Size</th>
+                          <th scope="col">Orders</th>
+          
+                      </tr>
+                  </thead>
+                  <tbody id = "quotes_tbody0">
+
+                  </tbody>
+              </table>
+          </div>
+          <div class="col" style="height:250px;overflow-y: scroll;">
+            <p>Quotes</p>
+              <table class="table table-responsive table-striped table-sm" id = "ask_quotes0">
+                  <thead>
+                      <tr>
+                          <th scope="col">Time</th>
+                          <th scope="col">Ask Price</th>
+                          <th scope="col">Ask Size</th>
+                          <th scope="col">Orders</th>
+          
+                      </tr>
+                  </thead>
+                  <tbody id = "ask_quotes_tbody0">
+                  </tbody>
+              </table>
+          </div>
+        </div>
+        <!-- AAPL -->
+        <h2>AAPL</h2>
+        <br>
+        <div class="row">
+            <div class="col" style="height:250px;overflow-y: scroll;">
+                <table class="table table-responsive table-striped table-sm" id="trades1">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Trades</th>
+                            <th scope="col">Orders</th>
+            
+                        </tr>
+                    </thead>
+                    <tbody id="trades_tbody1">
+  
+                    </tbody>
+                </table>
+            </div>
+            <div class="col" style="height:250px;overflow-y: scroll;">
+                <table class="table table-responsive table-striped table-sm" id ="quotes1">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Bid Price</th>
+                            <th scope="col">Bid Size</th>
+                            <th scope="col">Orders</th>
+            
+                        </tr>
+                    </thead>
+                    <tbody id = "quotes_tbody1">
+  
+                    </tbody>
+                </table>
+            </div>
+            <div class="col" style="height:250px;overflow-y: scroll;">
+                <table class="table table-responsive table-striped table-sm" id = "ask_quotes1">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Ask Price</th>
+                            <th scope="col">Ask Size</th>
+                            <th scope="col">Orders</th>
+            
+                        </tr>
+                    </thead>
+                    <tbody id = "ask_quotes_tbody1">
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+        <h2>AMZN</h2>
+        <br>
+        <!-- AMZN -->
+        <div class="row">
+            <div class="col" style="height:250px;overflow-y: scroll;">
+                <table class="table table-responsive table-striped table-sm" id="trades2">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Trades</th>
+                            <th scope="col">Orders</th>
+            
+                        </tr>
+                    </thead>
+                    <tbody id="trades_tbody2">
+  
+                    </tbody>
+                </table>
+            </div>
+            <div class="col" style="height:250px;overflow-y: scroll;">
+                <table class="table table-responsive table-striped table-sm" id ="quotes2">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Bid Price</th>
+                            <th scope="col">Bid Size</th>
+                            <th scope="col">Orders</th>
+            
+                        </tr>
+                    </thead>
+                    <tbody id = "quotes_tbody2">
+  
+                    </tbody>
+                </table>
+            </div>
+            <div class="col" style="height:250px;overflow-y: scroll;">
+                <table class="table table-responsive table-striped table-sm" id = "ask_quotes2">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Ask Price</th>
+                            <th scope="col">Ask Size</th>
+                            <th scope="col">Orders</th>
+            
+                        </tr>
+                    </thead>
+                    <tbody id = "ask_quotes_tbody2">
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+
+        <!-- AMD -->
+        <h2>AMD</h2>
+        <br>
+        <div class="row">
+            <div class="col" style="height:250px;overflow-y: scroll;">
+                <table class="table table-responsive table-striped table-sm" id="trades3">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Trades</th>
+                            <th scope="col">Orders</th>
+            
+                        </tr>
+                    </thead>
+                    <tbody id="trades_tbody3">
+  
+                    </tbody>
+                </table>
+            </div>
+            <div class="col" style="height:250px;overflow-y: scroll;">
+                <table class="table table-responsive table-striped table-sm" id ="quotes3">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Bid Price</th>
+                            <th scope="col">Bid Size</th>
+                            <th scope="col">Orders</th>
+            
+                        </tr>
+                    </thead>
+                    <tbody id = "quotes_tbody3">
+  
+                    </tbody>
+                </table>
+            </div>
+            <div class="col" style="height:250px;overflow-y: scroll;">
+                <table class="table table-responsive table-striped table-sm" id = "ask_quotes3">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Ask Price</th>
+                            <th scope="col">Ask Size</th>
+                            <th scope="col">Orders</th>
+            
+                        </tr>
+                    </thead>
+                    <tbody id = "ask_quotes_tbody3">
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+        <!-- GOOGL -->
+        <h2>GOOGL</h2>
+        <br>
+        <div class="row">
+            <div class="col" style="height:250px;overflow-y: scroll;">
+                <table class="table table-responsive table-striped table-sm" id="trades4">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Trades</th>
+                            <th scope="col">Orders</th>
+            
+                        </tr>
+                    </thead>
+                    <tbody id="trades_tbody4">
+  
+                    </tbody>
+                </table>
+            </div>
+            <div class="col" style="height:250px;overflow-y: scroll;">
+                <table class="table table-responsive table-striped table-sm" id ="quotes4">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Bid Price</th>
+                            <th scope="col">Bid Size</th>
+                            <th scope="col">Orders</th>
+            
+                        </tr>
+                    </thead>
+                    <tbody id = "quotes_tbody4">
+  
+                    </tbody>
+                </table>
+            </div>
+            <div class="col" style="height:250px;overflow-y: scroll;">
+                <table class="table table-responsive table-striped table-sm" id = "ask_quotes4">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Ask Price</th>
+                            <th scope="col">Ask Size</th>
+                            <th scope="col">Orders</th>
+            
+                        </tr>
+                    </thead>
+                    <tbody id = "ask_quotes_tbody4">
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+        <!-- META -->
+        <h2>META</h2>
+        <br>
+        <div class="row">
+            <div class="col" style="height:250px;overflow-y: scroll;">
+                <table class="table table-responsive table-striped table-sm" id="trades5">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Trades</th>
+                            <th scope="col">Orders</th>
+            
+                        </tr>
+                    </thead>
+                    <tbody id="trades_tbody5">
+  
+                    </tbody>
+                </table>
+            </div>
+            <div class="col" style="height:250px;overflow-y: scroll;">
+                <table class="table table-responsive table-striped table-sm" id ="quotes5">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Bid Price</th>
+                            <th scope="col">Bid Size</th>
+                            <th scope="col">Orders</th>
+            
+                        </tr>
+                    </thead>
+                    <tbody id = "quotes_tbody5">
+  
+                    </tbody>
+                </table>
+            </div>
+            <div class="col" style="height:250px;overflow-y: scroll;">
+                <table class="table table-responsive table-striped table-sm" id = "ask_quotes5">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Ask Price</th>
+                            <th scope="col">Ask Size</th>
+                            <th scope="col">Orders</th>
+            
+                        </tr>
+                    </thead>
+                    <tbody id = "ask_quotes_tbody5">
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+        <!-- GOOG -->
+        <h2>GOOG</h2>
+        <br>
+        <div class="row">
+            <div class="col" style="height:250px;overflow-y: scroll;">
+                <table class="table table-responsive table-striped table-sm" id="trades6">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Trades</th>
+                            <th scope="col">Orders</th>
+            
+                        </tr>
+                    </thead>
+                    <tbody id="trades_tbody6">
+  
+                    </tbody>
+                </table>
+            </div>
+            <div class="col" style="height:250px;overflow-y: scroll;">
+                <table class="table table-responsive table-striped table-sm" id ="quotes6">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Bid Price</th>
+                            <th scope="col">Bid Size</th>
+                            <th scope="col">Orders</th>
+            
+                        </tr>
+                    </thead>
+                    <tbody id = "quotes_tbody6">
+  
+                    </tbody>
+                </table>
+            </div>
+            <div class="col" style="height:250px;overflow-y: scroll;">
+                <table class="table table-responsive table-striped table-sm" id = "ask_quotes6">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Ask Price</th>
+                            <th scope="col">Ask Size</th>
+                            <th scope="col">Orders</th>
+            
+                        </tr>
+                    </thead>
+                    <tbody id = "ask_quotes_tbody6">
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+      <script src="{% static 'script.js' %}"></script>
+
+
+</body>
+
+</html>
