@@ -119,10 +119,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    '/var/www/static/'
-]
 
 STATIC_URL = "/static/"
 
@@ -154,13 +150,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = os.environ.get('SECRET_KEY', default='4e985de44b1c2d5a520c45b7e3284732')
 DEBUG = 'RENDER' not in os.environ
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
-if not DEBUG:
-    # Tell Django to copy statics to the `staticfiles` directory
-    # in your application directory on Render.
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# if RENDER_EXTERNAL_HOSTNAME:
+#     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+# if not DEBUG:
+#     # Tell Django to copy statics to the `staticfiles` directory
+#     # in your application directory on Render.
+#     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-    # Turn on WhiteNoise storage backend that takes care of compressing static files
-    # and creating unique names for each version so they can safely be cached forever.
-    # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#     # Turn on WhiteNoise storage backend that takes care of compressing static files
+#     # and creating unique names for each version so they can safely be cached forever.
+#     # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
