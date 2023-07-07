@@ -3,8 +3,8 @@
 set -o errexit
 
 python -m pip install --upgrade pip
-pip install poetry
-poetry install
+
+pip install -r "requirements.txt"
 
 python manage.py collectstatic --no-input
 python manage.py runserver
