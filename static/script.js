@@ -3,7 +3,7 @@ ask_quotes0 = {}
 function executeQuery() {
     $.ajax({
         method: 'GET',
-        url: 'http://127.0.0.1:8000/get_contents/',
+        url: '/get_contents/',
         success: function (data) {
             // do something with the return value here if you like
 
@@ -301,7 +301,7 @@ $(document).ready(function () {
 
     $.ajax({
         method: 'GET',
-        url: 'http://127.0.0.1:8000/get_data/',
+        url: '/get_data/',
         success: function (data) {
             console.log('asdf');
         },
