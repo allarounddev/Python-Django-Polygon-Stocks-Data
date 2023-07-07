@@ -277,6 +277,47 @@ def get_data(request):
     c.run(handle_msg)
     return HttpResponse("test")
 
+def refresh_data(request):
+    global previous_type0, df_T0,df_T1,df_T2, df_T3,df_T4,df_T5,df_T6, df_Q0, df_Q1,df_Q2, df_Q3, df_Q4,df_Q5,df_Q6
+
+    df_T0 = pd.DataFrame([], columns = ['event_type', 'symbol', 'exchange', 'id', 'tape', 'price', 'size',
+           'conditions', 'timestamp', 'sequence_number'])
+    df_T1 = pd.DataFrame([], columns = ['event_type', 'symbol', 'exchange', 'id', 'tape', 'price', 'size',
+           'conditions', 'timestamp', 'sequence_number'])
+    df_T2 = pd.DataFrame([], columns = ['event_type', 'symbol', 'exchange', 'id', 'tape', 'price', 'size',
+           'conditions', 'timestamp', 'sequence_number'])
+    df_T3 = pd.DataFrame([], columns = ['event_type', 'symbol', 'exchange', 'id', 'tape', 'price', 'size',
+           'conditions', 'timestamp', 'sequence_number'])
+    df_T4 = pd.DataFrame([], columns = ['event_type', 'symbol', 'exchange', 'id', 'tape', 'price', 'size',
+           'conditions', 'timestamp', 'sequence_number'])
+    df_T5 = pd.DataFrame([], columns = ['event_type', 'symbol', 'exchange', 'id', 'tape', 'price', 'size',
+           'conditions', 'timestamp', 'sequence_number'])
+    df_T6 = pd.DataFrame([], columns = ['event_type', 'symbol', 'exchange', 'id', 'tape', 'price', 'size',
+           'conditions', 'timestamp', 'sequence_number'])
+
+    df_Q0 = pd.DataFrame([], columns = ['event_type', 'symbol', 'bid_exchange_id', 'bid_price',
+                    'bid_size', 'ask_exchange_id', 'ask_price', 'ask_size', 'condition', 'timestamp',
+                    'tape', 'sequence_number'])
+    df_Q1 = pd.DataFrame([], columns = ['event_type', 'symbol', 'bid_exchange_id', 'bid_price',
+                    'bid_size', 'ask_exchange_id', 'ask_price', 'ask_size', 'condition', 'timestamp',
+                    'tape', 'sequence_number'])
+    df_Q2 = pd.DataFrame([], columns = ['event_type', 'symbol', 'bid_exchange_id', 'bid_price',
+                    'bid_size', 'ask_exchange_id', 'ask_price', 'ask_size', 'condition', 'timestamp',
+                    'tape', 'sequence_number'])
+    df_Q3 = pd.DataFrame([], columns = ['event_type', 'symbol', 'bid_exchange_id', 'bid_price',
+                    'bid_size', 'ask_exchange_id', 'ask_price', 'ask_size', 'condition', 'timestamp',
+                    'tape', 'sequence_number'])
+    df_Q4 = pd.DataFrame([], columns = ['event_type', 'symbol', 'bid_exchange_id', 'bid_price',
+                    'bid_size', 'ask_exchange_id', 'ask_price', 'ask_size', 'condition', 'timestamp',
+                    'tape', 'sequence_number'])
+    df_Q5 = pd.DataFrame([], columns = ['event_type', 'symbol', 'bid_exchange_id', 'bid_price',
+                    'bid_size', 'ask_exchange_id', 'ask_price', 'ask_size', 'condition', 'timestamp',
+                    'tape', 'sequence_number'])
+    df_Q6 = pd.DataFrame([], columns = ['event_type', 'symbol', 'bid_exchange_id', 'bid_price',
+                    'bid_size', 'ask_exchange_id', 'ask_price', 'ask_size', 'condition', 'timestamp',
+                    'tape', 'sequence_number'])
+
+    return HttpResponse("Refresh Dat!")
 
 def get_contents(request):
     data = {

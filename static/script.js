@@ -289,12 +289,25 @@ function executeQuery() {
     updateCall();
 }
 
+function refreshData() {
+    $.ajax({
+        method: 'GET',
+        url: '/refresh_data/',
+        success: function (data) {
+            console.log('asdf');
+        },
+        error: function (error_data) {
+            console.log(error_data)
+        }
+    })
+    updateData();
+}
+function updateData() {
+    setTimeout(function () { refreshData() }, 3000);
+}
+
 function updateCall() {
-    if (JSON.stringify(ask_quotes0) === "{}") {
-        setTimeout(function () { executeQuery() }, 1000);
-    } else {
-        setTimeout(function () { executeQuery() }, 1000);
-    }
+    setTimeout(function () { executeQuery() }, 1000);
 }
 
 $(document).ready(function () {
@@ -311,4 +324,5 @@ $(document).ready(function () {
     })
 
     executeQuery();
+    refreshData();
 });
