@@ -13,3 +13,4 @@ uvicorn
 websocket-client
 websockets
 gunicorn
+whitenoise
