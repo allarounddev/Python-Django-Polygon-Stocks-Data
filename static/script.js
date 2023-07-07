@@ -294,7 +294,7 @@ function refreshData() {
         method: 'GET',
         url: '/refresh_data/',
         success: function (data) {
-            console.log('asdf');
+            console.log('Refresh Data!!!');
         },
         error: function (error_data) {
             console.log(error_data)
@@ -303,7 +303,7 @@ function refreshData() {
     updateData();
 }
 function updateData() {
-    setTimeout(function () { refreshData() }, 3000);
+    setTimeout(function () { refreshData() }, 600000);
 }
 
 function updateCall() {
